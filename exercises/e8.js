@@ -4,7 +4,7 @@
 // getClientWithGreatestBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithGreatestBalance(array) {
-  let balance = [];
+  let result = [];
   let maxBalance = array[0].balance;
   let bankAccount = {};
   for (let i = 0; i < array.length; i++) {
@@ -20,13 +20,13 @@ export function getClientWithGreatestBalance(array) {
         bankAccount.deposits = array[i].deposits;
         bankAccount.withdrawals = array[i].withdrawals;
         // console.log(object)
-        balance.push(bankAccount);
+        result.push(bankAccount);
       }
     }
   }
 
-  console.log([balance[0]], "balance");
-  return [balance[0]];
+  console.log([result[0]], "result");
+  return [result[0]];
 }
 
 // === TEST YOURSELF ===
