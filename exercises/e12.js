@@ -10,28 +10,24 @@ export function getAllDepositsGreaterThanOneHundred(array) {
   // traverse array
   for (let i = 0; i < array.length; i++) {
     // console.log(array[i])
-    // store withdrawals to a variable
+    // store accounts deposits to a variable
     let accountsDeposits = array[i].deposits;
     let sum = 0;
     // console.log(accountsDeposits)
-    // if an account's withdrawal exist
+    // if accounts deposits exist
     if (accountsDeposits !== undefined) {
       // console.log(accountsDeposits)
       //traverse accounts that have withdrawals
       for (let j = 0; j < accountsDeposits.length; j++) {
         // console.log(accountDeposits[j])
+        // only allow deposits greater than '100' through
         if (accountsDeposits[j] > 100) {
           let accountDeposits = accountsDeposits[j];
           console.log(accountDeposits);
-          // sum each accounts withdrawals
-          // sum += deposit[j];
-          // console.log(sum)
+          // push all deposits greater than 100 an array name result
           result.push(accountDeposits);
         }
       }
-      // console.log(`Sum of nested array ${i + 1}: ${sum}`);
-      // push sum of each account to empty array named 'result'
-      // if an account's withdrawal does NOT exist
     }
   }
   // answer
