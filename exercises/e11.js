@@ -5,8 +5,38 @@
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
 
 export function getAllWithdrawals(array) {
-  // Your code goes here...
-
+  let result = [];
+  // traverse array
+  for (let i = 0; i < array.length; i++) {
+    // console.log(array[i])
+    // store withdrawals to a variable
+    let withdrawal = array[i].withdrawals;
+    let sum = 0;
+    // console.log(withdrawal)
+    // if an account's withdrawal exist
+    if (withdrawal !== undefined) {
+      // console.log(withdrawal)
+      //traverse accounts that have withdrawals
+      for (let j = 0; j < withdrawal.length; j++) {
+        // console.log(withdrawal)
+        // sum each accounts withdrawals
+        sum += withdrawal[j];
+        // console.log(sum)
+      }
+      // console.log(`Sum of nested array ${i + 1}: ${sum}`);
+      // push sum of each account to empty array named 'result'
+      result.push(sum);
+      // if an account's withdrawal does NOT exist
+    } else if (withdrawal == undefined) {
+      // set that 0 to what would have been an array of that person's withdrawals
+      withdrawal = 0;
+      // push it to 'result' array
+      result.push(withdrawal);
+    }
+  }
+  // answer
+  // console.log(result);
+  return result;
 }
 
 // === TEST YOURSELF ===
