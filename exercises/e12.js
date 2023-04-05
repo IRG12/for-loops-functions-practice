@@ -17,7 +17,7 @@ export function getAllDepositsGreaterThanOneHundred(array) {
     // if accounts deposits exist
     if (accountsDeposits !== undefined) {
       // console.log(accountsDeposits)
-      //traverse accounts that have withdrawals
+      //traverse accounts that have deposits
       for (let j = 0; j < accountsDeposits.length; j++) {
         // console.log(accountDeposits[j])
         // only allow deposits greater than '100' through
