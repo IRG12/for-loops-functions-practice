@@ -5,8 +5,19 @@
 
 export function concatArrays(arr1, arr2) {
   // Your code goes here...
-  const arr3 = arr1.concat(arr2);
-  return arr3;
+
+  // Your code goes here...
+  const newArr = [];
+  for (let i of arr1) {
+    // console.log(arr1[i])
+    newArr.push(i);
+  }
+  for (let j of arr2) {
+    // console.log(arr2[j])
+    newArr.push(j);
+  }
+  // console.log(newArr);
+  return newArr;
 }
 
 // === TEST YOURSELF ===
