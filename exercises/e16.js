@@ -5,21 +5,20 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  const storing = [];
   const result = [];
   let specificStringWhenJoined = "";
   let concatString = "";
   for (let h = 0; h < array.length; h++) {
     if (typeof array[h] === "object") {
       for (let a = 0; a < array[h].length; a++) {
-        storing.push(array[h][a]);
+        result.push(array[h][a]);
         // console.log(array[h][a])
       }
     }
 
     if (typeof array[h] !== "object") {
       console.log(array[h]);
-      storing.push(array[h]);
+      result.push(array[h]);
     } else if (typeof array[h] !== "object" && typeof array[h] === "string") {
       if (concatString === "") {
         concatString += array[h];
@@ -32,9 +31,9 @@ export function flatArrays(array) {
     specificStringWhenJoined = concatString;
   }
 
-  if (storing.length) {
-    console.log(storing);
-    return storing;
+  if (result.length) {
+    console.log(result);
+    return result;
   } else {
     console.log(specificStringWhenJoined);
     return specificStringWhenJoined;
