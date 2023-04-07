@@ -5,9 +5,40 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
-  const array1 = array.flat();
-  return array1;
+  const storing = [];
+  const result = [];
+  let specificStringWhenJoined = "";
+  let concatString = "";
+  for (let h = 0; h < array.length; h++) {
+    if (typeof array[h] === "object") {
+      for (let a = 0; a < array[h].length; a++) {
+        storing.push(array[h][a]);
+        // console.log(array[h][a])
+      }
+    }
+
+    if (typeof array[h] !== "object") {
+      console.log(array[h]);
+      storing.push(array[h]);
+    } else if (typeof array[h] !== "object" && typeof array[h] === "string") {
+      if (concatString === "") {
+        concatString += array[h];
+        // console.log(specificStringWhenJoined)
+      } else {
+        concatString += " " + array[h];
+      }
+    }
+
+    specificStringWhenJoined = concatString;
+  }
+
+  if (storing.length) {
+    console.log(storing);
+    return storing;
+  } else {
+    console.log(specificStringWhenJoined);
+    return specificStringWhenJoined;
+  }
 }
 
 // === TEST YOURSELF ===
