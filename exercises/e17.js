@@ -6,9 +6,14 @@
 
 export function doesArrayInclude(array, value) {
   // Your code goes here...
-
-  const array1 = array.includes(value);
-  return array1;
+  for (let i of array) {
+    if (i === value) {
+      console.log(true);
+      return true;
+    }
+  }
+  console.log(false);
+  return false;
 }
 
 // === TEST YOURSELF ===
