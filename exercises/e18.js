@@ -5,8 +5,17 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-  const newString = array.join(separator);
-  return newString;
+  let concatString = "";
+  for (let i = 0; i < array.length; i++) {
+    // console.log(array[i])
+    concatString += array[i];
+    if (i < array.length - 1) {
+      concatString += separator;
+    }
+    // console.log(concatString)
+  }
+  // console.log(concatString)
+  return concatString;
 }
 
 // === TEST YOURSELF ===
