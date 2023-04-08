@@ -14,7 +14,7 @@ export function getClientsWithLetterInName(array, letter) {
     // traverse string
     for (let char of name) {
       // if parameter  'letter' equals the 'char' of the string
-      if (letter.toLowerCase().includes(char.toLowerCase())) {
+      if (letter.toLowerCase() === char.toLowerCase()) {
         // push that name to an empty array
         result.push(name);
       }
