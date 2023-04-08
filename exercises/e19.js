@@ -5,8 +5,18 @@
 
 export function reverseArray(array) {
   // Your code goes here...
-  const reversed = array.reverse();
-  return reversed;
+  // iterate over the first half of the array (up to the middle element)
+  for (let i = 0; i < array.length / 2; i++) {
+    let firstIndex = i; // store the index of the first element of the pair to swap
+    let lastIndex = array.length - 1 - i; // store the index of the last element of the pair to swap
+
+    let temp = array[firstIndex]; // temporarily store the value of the first element of the pair
+    array[firstIndex] = array[lastIndex]; // overwrite the value of the first element with the value of the last element
+    array[lastIndex] = temp; // overwrite the value of the last element with the temporary value (the original value of the first   element)
+  }
+
+  console.log(array);
+  return array;
 }
 
 // === TEST YOURSELF ===
